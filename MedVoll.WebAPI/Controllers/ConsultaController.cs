@@ -2,6 +2,7 @@
 using MedVoll.Web.Exceptions;
 using MedVoll.Web.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedVoll.Web.Controllers
@@ -22,6 +23,7 @@ namespace MedVoll.Web.Controllers
         }
 
         [HttpGet("listar")]
+        [Authorize(Policy = "User")]
         public async Task<IActionResult> ListarAsync([FromQuery] int page = 1)
         {
             var consultasAtivas = await _consultaservice.ListarAsync(page);        
