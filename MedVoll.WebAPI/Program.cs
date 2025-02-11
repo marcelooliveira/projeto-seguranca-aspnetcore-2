@@ -27,6 +27,9 @@ builder.Services.AddTransient<IConsultaRepository, ConsultaRepository>();
 builder.Services.AddTransient<IMedicoService, MedicoService>();
 builder.Services.AddTransient<IConsultaService, ConsultaService>();
 
+//tokenjwtservice
+builder.Services.AddScoped<TokenJWTService>();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 
 var app = builder.Build();
