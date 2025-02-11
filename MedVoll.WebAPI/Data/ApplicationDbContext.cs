@@ -1,11 +1,10 @@
 ﻿using MedVoll.Web.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedVoll.Web.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<VollMedUser>
     {
         public DbSet<Consulta> Consultas { get; set; }
         public DbSet<Medico> Medicos { get; set; }
